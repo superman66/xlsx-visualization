@@ -16,7 +16,7 @@ const data = [
     }
 ]
 
-class LabelTree {ying
+class LabelTree {
     constructor(data) {
         this.data = data;
         this.labelTree = [];
@@ -130,11 +130,11 @@ class LabelTree {ying
     }
 }
 
-const labelTree = new LabelTree(data);
-labelTree.init();
-// console.log(labelTree.labelTree);
-console.log(labelTree.uvHash);
-// console.log(labelTree.arrayToTree(labelTree.labelTree));
+// const labelTree = new LabelTree(data);
+// labelTree.init();
+// // console.log(labelTree.labelTree);
+// console.log(labelTree.uvHash);
+// // console.log(labelTree.arrayToTree(labelTree.labelTree));
 
-
+export default LabelTree;
 

@@ -27,9 +27,7 @@
 <body>
     <b>JS-XLSX Live Demo</b><br /> Output Format:
     <select name="format">
-<option value="csv" selected> CSV</option>
-<option value="json"> JSON</option>
-<option value="form"> FORMULAE</option>
+<option value="json" selected> JSON</option>
 </select><br />
 
     <div id="drop">Drop a spreadsheet file here to see sheet data</div>
@@ -39,8 +37,8 @@
     <input type="checkbox" name="userabs" checked><br />
     <pre id="out"></pre>
     <br />
-    <script src="node_modules/xlsx/dist/xlsx.core.min.js"></script>
-    <script src="index.js"></script>
+    <script src="./node_modules/xlsx/dist/xlsx.min.js"></script>
+    <script src="./bundle.js"></script>
 </body>
 
 </html>

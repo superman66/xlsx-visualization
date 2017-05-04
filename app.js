@@ -70,7 +70,7 @@ function xw_xfer(data, cb) {
         switch (e.data.t) {
             case 'ready': break;
             case 'e': console.error(e.data.d); break;
-            default: xx = ab2str(e.data).replace(/\n/g, "\\n").replace(/\r/g, "\\r"); console.log("done"); cb(JSON.parse(xx)); break;
+            default: var xx = ab2str(e.data).replace(/\n/g, "\\n").replace(/\r/g, "\\r"); console.log("done"); cb(JSON.parse(xx)); break;
         }
     };
     if (rABS) {
@@ -104,6 +104,7 @@ function to_json(workbook) {
         if (roa.length > 0) {
             result[sheetName] = roa;
         }
+        sort(result[sheetName])
     });
     return result;
 }
@@ -234,3 +235,11 @@ function handleFile(e) {
 }
 
 if (xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
+
+function sort(data) {
+    const labelTree = new LabelTree(data);
+    labelTree.init();
+    // console.log(labelTree.labelTree);
+    console.log(labelTree.uvHash);
+    // console.log(labelTree.arrayToTree(labelTree.labelTree));
+}
