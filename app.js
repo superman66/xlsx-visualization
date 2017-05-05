@@ -1,3 +1,5 @@
+import * as d3 from "d3";
+import D3Tree from './d3-tree.js'
 import LabelTree from './LabelTree'
 /*jshint browser:true */
 /*global XLSX */
@@ -154,8 +156,9 @@ function process_wb(wb) {
         default:
             output = to_csv(wb);
     }
-    if (out.innerText === undefined) out.textContent = output;
-    else out.innerText = output;
+    // if (out.innerText === undefined) out.textContent = output;
+    // else out.innerText = output;
+    tree();
     if (typeof console !== 'undefined') console.log("output", new Date());
 }
 
@@ -239,7 +242,9 @@ if (xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 function sort(data) {
     const labelTree = new LabelTree(data);
     labelTree.init();
-    // console.log(labelTree.labelTree);
-    console.log(labelTree.uvHash);
-    // console.log(labelTree.arrayToTree(labelTree.labelTree));
+    console.log(labelTree.labelTree);
+    // console.log(labelTree.uvHash);
+    const length = labelTree.labelTree.length;
+    // console.log(labelTree.handleBigArrayListToTree(labelTree.labelTree));
+//     console.log(labelTree.arrayToTree(labelTree.labelTree));
 }

@@ -1,5 +1,4 @@
 'use strict'
-import _ from 'underscore'
 const data = [
     {
         "MAC": "DC:EE:06:22",
@@ -16,23 +15,17 @@ const data = [
     }
 ]
 
-class LabelTree {
-    constructor(data) {
+var LabelTree = {
+    data: [],
+    labelTree: [],
+    uvHash: {},
+    currentMAC: '',
+    label: [],
+    init(data) {
         this.data = data;
-        this.labelTree = [];
-        this.label = [];
-        this.uvHash = {
-            'lableName': {
-                MAC: 'xxxxx',
-                count: 0
-            }
-        };
-        this.currentMAC = '';
-    }
-    init() {
-        this.getLabel(this.data[0]);
-        this.handleData(this.data);
-    }
+        this.getLabel(data[0]);
+        this.handleData(data);
+    },
     /**
      * 获取 ‘MAC’  ‘标签/Weight’ 属性名
      * @param {*} data 
@@ -41,12 +34,12 @@ class LabelTree {
         for (var obj in data) {
             this.label.push(obj);
         }
-    }
+    },
     handleData(data) {
         data.forEach(value => {
             this.flattenArray(value);
         })
-    }
+    },
     /**
      * 分割拍扁标签成数组
      * @param {*} data 
@@ -61,7 +54,7 @@ class LabelTree {
             value = value.replace(/\**=\d+/g, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '').split('/');
             this.addParentToArray(value)
         })
-    }
+    },
     /**
      * 将数组转换为具有父子关系的数组
      * @param {*} data 
@@ -75,7 +68,7 @@ class LabelTree {
                 this.countUv(value);
 
                 // 判断当前标签是否已经存在
-                const exists = _.some(this.labelTree, label => label.name === value && label.parent === parent);
+                const exists = this.labelTree.some(label => label.name === value && label.parent === parent);
                 let node = {
                     parent: parent,
                     name: value,
@@ -83,7 +76,7 @@ class LabelTree {
                 !exists && this.labelTree.push(node);
             }
         })
-    }
+    },
     /**
      * 数组转换为tree
      * @param {*} array 
@@ -94,20 +87,31 @@ class LabelTree {
         const that = this;
         tree = typeof tree !== 'undefined' ? tree : [];
         parent = typeof parent !== 'undefined' ? parent : { name: null };
-
-        const children = _.filter(array, child => child.parent == parent.name);
-
-        if (!_.isEmpty(children)) {
+        const children = array.filter(child => child.parent == parent.name);
+        if (children.length > 0) {
             if (parent.name == null) {
                 tree = children;
             } else {
                 parent['children'] = children
             }
-            _.each(children, function (child) { that.arrayToTree(array, child) });
+            children.forEach(function (child) { that.arrayToTree(array, child) });
         }
         return tree;
-    }
-
+    },
+    handleBigArrayListToTree(array) {
+        let tree = [];
+        console.log(array);
+        const _array = [
+            array.slice(0, parseInt(array.length / 2)),
+            array.slice(parseInt(array.length / 2))
+        ]
+        console.log(this.arrayToTree(_array[1]));
+        // _array.forEach((value) => {
+        //     console.log(this.arrayToTree(value));
+        //     tree.concat(tree);
+        // })
+        return tree
+    },
     /**
      * 统计标签UV数
      * @param {*} value 
@@ -130,11 +134,7 @@ class LabelTree {
     }
 }
 
-// const labelTree = new LabelTree(data);
-// labelTree.init();
-// // console.log(labelTree.labelTree);
-// console.log(labelTree.uvHash);
-// // console.log(labelTree.arrayToTree(labelTree.labelTree));
+LabelTree.init(data);
+console.log(LabelTree.arrayToTree(LabelTree.labelTree));
 
-export default LabelTree;
 

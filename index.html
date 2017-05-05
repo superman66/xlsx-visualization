@@ -7,6 +7,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>JS-XLSX Live Demo</title>
     <style>
+        .node circle {
+            cursor: pointer;
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+        
+        .node text {
+            font-size: 11px;
+        }
+        
+        path.link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 1.5px;
+        }
+        
         #drop {
             border: 2px dashed #bbb;
             -moz-border-radius: 5px;
@@ -35,9 +52,11 @@
     Options: <br /> Use Web Workers: (when available) <input type="checkbox" name="useworker" checked><br /> Use Transferrables:
     (when available) <input type="checkbox" name="xferable" checked><br /> Use readAsBinaryString: (when available)
     <input type="checkbox" name="userabs" checked><br />
-    <pre id="out"></pre>
+    <div id="out"></div>
     <br />
     <script src="./node_modules/xlsx/dist/xlsx.min.js"></script>
+    <!--<script type="text/javascript" src="./node_modules/d3/d3.js"></script>
+    <script type="text/javascript" src="./node_modules/d3/src/layout/tree.js"></script>-->
     <script src="./bundle.js"></script>
 </body>
 
