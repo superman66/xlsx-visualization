@@ -83,20 +83,33 @@ var LabelTree = {
      * @param {*} parent 
      * @param {*} tree 
      */
-    arrayToTree(array, parent, tree) {
+    arrayToTree(nodes, parent, tree) {
         const that = this;
-        tree = typeof tree !== 'undefined' ? tree : [];
-        parent = typeof parent !== 'undefined' ? parent : { name: null };
-        const children = array.filter(child => child.parent == parent.name);
-        if (children.length > 0) {
-            if (parent.name == null) {
-                tree = children;
+        // tree = typeof tree !== 'undefined' ? tree : [];
+        // parent = typeof parent !== 'undefined' ? parent : { name: null };
+        // const children = array.filter(child => child.parent == parent.name);
+        // if (children.length > 0) {
+        //     if (parent.name == null) {
+        //         tree = children;
+        //     } else {
+        //         parent['children'] = children
+        //     }
+        //     children.forEach(function (child) { that.arrayToTree(array, child) });
+        // }
+        // return tree;
+
+        var map = {}, node, roots = [];
+        for (var i = 0; i < nodes.length; i += 1) {
+            node = nodes[i];
+            node.children = [];
+            map[node.name] = i; // use map to look-up the parents
+            if (node.parent !== null ) {
+                nodes[map[node.parent]].children.push(node);
             } else {
-                parent['children'] = children
+                roots.push(node);
             }
-            children.forEach(function (child) { that.arrayToTree(array, child) });
         }
-        return tree;
+        return roots;
     },
     handleBigArrayListToTree(array) {
         let tree = [];

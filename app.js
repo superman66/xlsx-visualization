@@ -1,6 +1,5 @@
 import * as d3 from "d3";
 import D3Tree from './d3-tree.js'
-import LabelTree from './LabelTree'
 /*jshint browser:true */
 /*global XLSX */
 var X = XLSX;
@@ -238,13 +237,3 @@ function handleFile(e) {
 }
 
 if (xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
-
-function sort(data) {
-    const labelTree = new LabelTree(data);
-    labelTree.init();
-    console.log(labelTree.labelTree);
-    // console.log(labelTree.uvHash);
-    const length = labelTree.labelTree.length;
-    // console.log(labelTree.handleBigArrayListToTree(labelTree.labelTree));
-//     console.log(labelTree.arrayToTree(labelTree.labelTree));
-}

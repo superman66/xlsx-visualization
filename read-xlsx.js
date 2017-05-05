@@ -51,13 +51,14 @@ var LabelTree = {
                 const parent = index === 0 ? null : data[index - 1]
 
                 // 统计标签 UV
-                this.countUv(value);
+                var count = this.countUv(value);
 
                 // 判断当前标签是否已经存在
                 const exists = this.labelTree.some(label => label.name === value && label.parent === parent);
                 let node = {
                     parent: parent,
                     name: value,
+                    count: count
                 }
                 !exists && this.labelTree.push(node);
             }
@@ -69,34 +70,33 @@ var LabelTree = {
      * @param {*} parent 
      * @param {*} tree 
      */
-    arrayToTree(array, parent, tree) {
+    arrayToTree(nodes, parent, tree) {
         const that = this;
-        tree = typeof tree !== 'undefined' ? tree : [];
-        parent = typeof parent !== 'undefined' ? parent : { name: null };
-        const children = array.filter(child => child.parent == parent.name);
-        if (children.length > 0) {
-            if (parent.name == null) {
-                tree = children;
+        var map = {}, node, roots = [];
+        for (var i = 0; i < nodes.length; i += 1) {
+            node = nodes[i];
+            node.children = [];
+            map[node.name] = i; // use map to look-up the parents
+            if (node.parent !== null) {
+                nodes[map[node.parent]].children.push(node);
             } else {
-                parent['children'] = children
+                roots.push(node);
             }
-            children.forEach(function (child) { that.arrayToTree(array, child) });
         }
-        return tree;
+        // roots = this.addUvToTree(this.uvHash, roots);
+        return roots;
     },
-    handleBigArrayListToTree(array) {
-        let tree = [];
-        console.log(array);
-        const _array = [
-            array.slice(0, parseInt(array.length / 2)),
-            array.slice(parseInt(array.length / 2))
-        ]
-        console.log(this.arrayToTree(_array[1]));
-        // _array.forEach((value) => {
-        //     console.log(this.arrayToTree(value));
-        //     tree.concat(tree);
-        // })
-        return tree
+
+    addUvToTree(uvs, tree) {
+        const that = this;
+        return tree.map(function (value, index) {
+            if (uvs[value.name]) {
+                return value.count = uvs[value.name].count;
+            }
+            else if (value.children.length > 0) {
+                that.addUvToTree(uvs, value.children);
+            }
+        })
     },
     /**
      * 统计标签UV数
@@ -117,6 +117,7 @@ var LabelTree = {
                 count: 1
             }
         }
+        return this.uvHash[value].count;
     }
 }
 
@@ -139,9 +140,28 @@ function writeFileSync(data, fileName) {
     data = JSON.stringify(data);
     fs.writeFileSync(fileName, data);
 }
-// console.log('data: ' + data);
-LabelTree.init(data);
-console.log(LabelTree.labelTree);
-writeFileSync(LabelTree.labelTree, './data/data.json');
-// console.log(labelTree.uvHash);
-// console.log(LabelTree.arrayToTree(LabelTree.labelTree));
+
+function generateTree(data) {
+    LabelTree.init(data);
+    var tree = LabelTree.arrayToTree(LabelTree.labelTree);
+    console.log(tree);
+    // var data = JSON.parse(LabelTree.arrayToTree(LabelTree.labelTree));
+    // writeFileSync(LabelTree.arrayToTree(data), './data/tree.json')
+}
+
+function generateUV() {
+    LabelTree.init(data)
+    var uvs = JSON.stringify(LabelTree.uvHash);
+    console.log(uvs);
+    writeFileSync(uvs, './data/uv.json')
+}
+
+function addUvToLabel(tree) {
+
+}
+
+
+
+// writeFileSync(data, './data/data.json')
+generateTree(data)
+// generateUV();
