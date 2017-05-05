@@ -51,14 +51,13 @@ var LabelTree = {
                 const parent = index === 0 ? null : data[index - 1]
 
                 // 统计标签 UV
-                var count = this.countUv(value);
+                this.countUv(value);
 
                 // 判断当前标签是否已经存在
                 const exists = this.labelTree.some(label => label.name === value && label.parent === parent);
                 let node = {
                     parent: parent,
                     name: value,
-                    count: count
                 }
                 !exists && this.labelTree.push(node);
             }
@@ -83,20 +82,26 @@ var LabelTree = {
                 roots.push(node);
             }
         }
-        // roots = this.addUvToTree(this.uvHash, roots);
+        this.addUvToTree(this.uvHash, roots);
         return roots;
     },
 
-    addUvToTree(uvs, tree) {
+    /**
+     * 添加标签到Tree
+     */
+    addUvToTree(uvs, items) {
         const that = this;
-        return tree.map(function (value, index) {
-            if (uvs[value.name]) {
-                return value.count = uvs[value.name].count;
+        items.forEach(function (label, index) {
+
+            if (uvs[label.name]) {
+                label.count = uvs[label.name].count;
             }
-            else if (value.children.length > 0) {
-                that.addUvToTree(uvs, value.children);
+
+            if (label.children.length > 0) {
+                that.addUvToTree(uvs, label.children);
             }
-        })
+        });
+
     },
     /**
      * 统计标签UV数
@@ -117,7 +122,6 @@ var LabelTree = {
                 count: 1
             }
         }
-        return this.uvHash[value].count;
     }
 }
 
@@ -144,15 +148,16 @@ function writeFileSync(data, fileName) {
 function generateTree(data) {
     LabelTree.init(data);
     var tree = LabelTree.arrayToTree(LabelTree.labelTree);
-    console.log(tree);
-    // var data = JSON.parse(LabelTree.arrayToTree(LabelTree.labelTree));
-    // writeFileSync(LabelTree.arrayToTree(data), './data/tree.json')
+    var data = {
+        name: "用户属性标签",
+        children: tree
+    }
+    writeFileSync(data, './data/tree.json')
 }
 
-function generateUV() {
+function generateUV(data) {
     LabelTree.init(data)
     var uvs = JSON.stringify(LabelTree.uvHash);
-    console.log(uvs);
     writeFileSync(uvs, './data/uv.json')
 }
 
@@ -163,5 +168,5 @@ function addUvToLabel(tree) {
 
 
 // writeFileSync(data, './data/data.json')
-generateTree(data)
-// generateUV();
+ generateTree(data)
+//generateUV(data);

@@ -3,7 +3,6 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link type="text/css" rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="./d3.js"></script>
     <script type="text/javascript" src="./d3.layout.js"></script>
     <style type="text/css">
@@ -13,29 +12,43 @@
             stroke: steelblue;
             stroke-width: 1.5px;
         }
-        
+
         .node text {
-            font-size: 20px;
+            font-size: 16px;
+            color: #fff
         }
-        
+
         path.link {
             fill: none;
             stroke: #ccc;
             stroke-width: 1.5px;
+        }
+        body{
+            background: #000
+        }
+        header {
+            font-size: 24px;
+            padding: 25px;
+            color: #fff
+        }
+
+        #chart {
+            padding-left: 100px
         }
     </style>
 </head>
 
 <body>
     <div id="body">
-        <div id="footer">
-            d3.layout.tree
-            <div class="hint">click or option-click to expand or collapse</div>
+        <header>用户属性标签</header>
+        <div id="chart">
+
         </div>
     </div>
     <script type="text/javascript">
-        var m = [20, 120, 20, 120],
-            w = 3000 - m[1] - m[3],
+        var baseFont = 12;
+        var m = [40, 120, 40, 120],
+            w = 2000 - m[1] - m[3],
             h = 3000 - m[0] - m[2],
             i = 0,
             root;
@@ -46,13 +59,13 @@
         var diagonal = d3.svg.diagonal()
             .projection(function (d) { return [d.y, d.x]; });
 
-        var vis = d3.select("#body").append("svg:svg")
+        var vis = d3.select("#chart").append("svg:svg")
             .attr("width", w + m[1] + m[3])
             .attr("height", h + m[0] + m[2])
             .append("svg:g")
             .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-        d3.json("../flare.json", function (json) {
+        d3.json("./tree.json", function (json) {
             root = json;
             root.x0 = h / 2;
             root.y0 = 0;
@@ -101,9 +114,10 @@
                 .attr("x", function (d) { return d.children || d._children ? -10 : 10; })
                 .attr("dy", ".35em")
                 .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
-                .text(function (d) { return d.name + '(' +d.size + ')'; })
+                .text(function (d) { return d.name; })
                 .style("fill-opacity", 1e-6)
-                // .style('font-size', '12px');
+                .style('fill', '#fff')
+                .style('font-size', function (d) { return calculateFontSize(d.count, baseFont) + 'px' });
 
             // Transition nodes to their new position.
             var nodeUpdate = node.transition()
@@ -174,6 +188,16 @@
                 d.children = d._children;
                 d._children = null;
             }
+        }
+        function calculateFontSize(count, baseFont) {
+            var fontSize;
+            if (count <= 20) {
+                fontSize = baseFont;
+            }
+            else {
+                fontSize = parseInt(count / 20) + baseFont;
+            }
+            return fontSize
         }
     </script>
 </body>

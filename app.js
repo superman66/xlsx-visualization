@@ -105,7 +105,6 @@ function to_json(workbook) {
         if (roa.length > 0) {
             result[sheetName] = roa;
         }
-        sort(result[sheetName])
     });
     return result;
 }
@@ -155,8 +154,8 @@ function process_wb(wb) {
         default:
             output = to_csv(wb);
     }
-    // if (out.innerText === undefined) out.textContent = output;
-    // else out.innerText = output;
+    if (out.innerText === undefined) out.textContent = output;
+    else out.innerText = output;
     tree();
     if (typeof console !== 'undefined') console.log("output", new Date());
 }
