@@ -1,5 +1,5 @@
 'use strict'
-const data = [
+const mockData = [
     {
         "MAC": "DC:EE:06:22",
         "标签/Weight": "书籍阅读=8, 休闲爱好=3, 厂商/华为=100, 品类消费水平/餐饮消费水平/中=43, 城市/上海市=85, 年龄/35-44=88, 影视音乐/关注节目/东方看大剧=49, 影视音乐/关注节目/军事报道=57, 影视音乐/关注节目/加速前进=84, 影视音乐/关注节目/大玩家特搜队=49, 影视音乐/关注节目/速度与激情6=73, 影视音乐/关注节目/锦绣未央=52, 影视音乐/关注节目/防务新观察=54, 影视音乐/关注频道/CCTV-6=55, 影视音乐/关注频道/CCTV-7=55, 影视音乐/关注频道/SITV五星体育=53, 影视音乐/关注频道/(点播)=54, 影视音乐/关注频道/东方卫视=53, 影视音乐/关注频道/东方电影台=53, 影视音乐/关注频道/北京卫视=55, 影视音乐/关注频道/嘉佳卡通频道=56, 性别/男=91, 所在行业/日化百货=12, 教育水平/高中及以下=67, 汽车/中档汽车=3, 汽车=21, 消费水平/高=51, 游戏=4, 省份/上海市=90, 终端/厂商/*=100, 终端/型号/*=100, 职业类别/文职人员=70, 资产状况/无车=88, 软件应用/旅游出行/出租车=67, 软件应用/旅游出行/地图导航=76, 软件应用/旅游出行=88, 软件应用/理财购物/支付=89, 软件应用/理财购物=89, 软件应用/生活实用/天气=98, 软件应用/生活实用/运动健身=97, 软件应用/生活实用=99, 软件应用/社交通讯/电话=17, 软件应用/社交通讯=17, 软件应用=96"
@@ -14,18 +14,22 @@ const data = [
 
     }
 ]
-
-var LabelTree = {
-    data: [],
-    labelTree: [],
-    uvHash: {},
-    currentMAC: '',
-    label: [],
-    init(data) {
-        this.data = data;
-        this.getLabel(data[0]);
-        this.handleData(data);
-    },
+class LabelTree {
+    constructor(data) {
+        this.data = data; // 传入的原始数据
+        this.tree = []; // 生成传统树结构的数组
+        this.labelTree = [];  // 生成的扁平树数组
+        this.uvHash = {};   // 标签UV统计对象
+        this.currentMAC = '';   // 当前标签 MAC，用于标记，无实际意义
+        this.label = [] // 记录 excel 数据的每个 object 所对应的key
+        this.init();
+    }
+    init() {
+        console.log('init');
+        this.getLabel(this.data[0]);
+        this.handleData(this.data);
+        this.tree = this.arrayToTree(this.labelTree);
+    }
     /**
      * 获取 ‘MAC’  ‘标签/Weight’ 属性名
      * @param {*} data 
@@ -34,12 +38,12 @@ var LabelTree = {
         for (var obj in data) {
             this.label.push(obj);
         }
-    },
+    }
     handleData(data) {
         data.forEach(value => {
             this.flattenArray(value);
         })
-    },
+    }
     /**
      * 分割拍扁标签成数组
      * @param {*} data 
@@ -54,7 +58,7 @@ var LabelTree = {
             value = value.replace(/\**=\d+/g, '').replace(/^\s\s*/, '').replace(/\s\s*$/, '').split('/');
             this.addParentToArray(value)
         })
-    },
+    }
     /**
      * 将数组转换为具有父子关系的数组
      * @param {*} data 
@@ -76,7 +80,7 @@ var LabelTree = {
                 !exists && this.labelTree.push(node);
             }
         })
-    },
+    }
     /**
      * 数组转换为tree
      * @param {*} array 
@@ -85,46 +89,36 @@ var LabelTree = {
      */
     arrayToTree(nodes, parent, tree) {
         const that = this;
-        // tree = typeof tree !== 'undefined' ? tree : [];
-        // parent = typeof parent !== 'undefined' ? parent : { name: null };
-        // const children = array.filter(child => child.parent == parent.name);
-        // if (children.length > 0) {
-        //     if (parent.name == null) {
-        //         tree = children;
-        //     } else {
-        //         parent['children'] = children
-        //     }
-        //     children.forEach(function (child) { that.arrayToTree(array, child) });
-        // }
-        // return tree;
-
         var map = {}, node, roots = [];
         for (var i = 0; i < nodes.length; i += 1) {
             node = nodes[i];
             node.children = [];
             map[node.name] = i; // use map to look-up the parents
-            if (node.parent !== null ) {
+            if (node.parent !== null) {
                 nodes[map[node.parent]].children.push(node);
             } else {
                 roots.push(node);
             }
         }
+        this.addUvToTree(this.uvHash, roots);
         return roots;
-    },
-    handleBigArrayListToTree(array) {
-        let tree = [];
-        console.log(array);
-        const _array = [
-            array.slice(0, parseInt(array.length / 2)),
-            array.slice(parseInt(array.length / 2))
-        ]
-        console.log(this.arrayToTree(_array[1]));
-        // _array.forEach((value) => {
-        //     console.log(this.arrayToTree(value));
-        //     tree.concat(tree);
-        // })
-        return tree
-    },
+    }
+
+    /**
+     * 添加标签到Tree
+     */
+    addUvToTree(uvs, items) {
+        const that = this;
+        items.forEach(function (label, index) {
+            if (uvs[label.name]) {
+                label.count = uvs[label.name].count;
+            }
+            if (label.children.length > 0) {
+                that.addUvToTree(uvs, label.children);
+            }
+        });
+
+    }
     /**
      * 统计标签UV数
      * @param {*} value 
@@ -147,7 +141,7 @@ var LabelTree = {
     }
 }
 
-LabelTree.init(data);
-console.log(LabelTree.arrayToTree(LabelTree.labelTree));
+const labelTree = new LabelTree(mockData);
+console.log(labelTree.tree);
 
 

@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceRoot}/read-xlsx.js"
+            "program": "${workspaceRoot}/LabelTree.js"
         },
         {
             "type": "node",

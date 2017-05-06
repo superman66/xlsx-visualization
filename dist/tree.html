@@ -23,9 +23,11 @@
             stroke: #ccc;
             stroke-width: 1.5px;
         }
-        body{
+
+        body {
             background: #000
         }
+
         header {
             font-size: 24px;
             padding: 25px;
@@ -114,7 +116,7 @@
                 .attr("x", function (d) { return d.children || d._children ? -10 : 10; })
                 .attr("dy", ".35em")
                 .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
-                .text(function (d) { return d.name; })
+                .text(function (d) { return d.name +( d.count ? '(' + d.count + ')': '') })
                 .style("fill-opacity", 1e-6)
                 .style('fill', '#fff')
                 .style('font-size', function (d) { return calculateFontSize(d.count, baseFont) + 'px' });
