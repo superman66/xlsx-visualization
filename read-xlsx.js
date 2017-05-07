@@ -1,5 +1,6 @@
 var xlsx = require('node-xlsx');
 var fs = require('fs');
+import LabelTree from './LabelTree'
 
 //读取文件内容
 var obj = xlsx.parse(__dirname + '/data/demo.xlsx');
@@ -22,11 +23,10 @@ function writeFileSync(data, fileName) {
 }
 
 function generateTree(data) {
-    LabelTree.init(data);
-    var tree = LabelTree.arrayToTree(LabelTree.labelTree);
+    const labelTree = new LabelTree(data);
     var data = {
         name: "用户属性标签",
-        children: tree
+        children: labelTree.tree
     }
     writeFileSync(data, './data/tree.json')
 }

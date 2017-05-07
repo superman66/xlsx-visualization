@@ -116,7 +116,7 @@
                 .attr("x", function (d) { return d.children || d._children ? -10 : 10; })
                 .attr("dy", ".35em")
                 .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
-                .text(function (d) { return d.name +( d.count ? '(' + d.count + ')': '') })
+                .text(function (d) { return d.name + (d.count ? '(' + d.count + ')' : '') })
                 .style("fill-opacity", 1e-6)
                 .style('fill', '#fff')
                 .style('font-size', function (d) { return calculateFontSize(d.count, baseFont) + 'px' });
@@ -183,13 +183,16 @@
 
         // Toggle children.
         function toggle(d) {
-            if (d.children && d.children.length > 0) {
-                d._children = d.children;
-                d.children = null;
-            } else {
-                d.children = d._children;
-                d._children = null;
+            if (d) {
+                if (d.children  && d.children.length > 0) {
+                    d._children = d.children;
+                    d.children = null;
+                } else {
+                    d.children = d._children;
+                    d._children = null;
+                }
             }
+
         }
         function calculateFontSize(count, baseFont) {
             var fontSize;

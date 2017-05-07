@@ -1,4 +1,5 @@
 'use strict'
+const fs = require('fs');
 const mockData = [
     {
         "MAC": "DC:EE:06:22",
@@ -25,10 +26,10 @@ class LabelTree {
         this.init();
     }
     init() {
-        console.log('init');
         this.getLabel(this.data[0]);
         this.handleData(this.data);
         this.tree = this.arrayToTree(this.labelTree);
+        this.tree = this.sortUv(this.tree);
     }
     /**
      * 获取 ‘MAC’  ‘标签/Weight’ 属性名
@@ -139,9 +140,44 @@ class LabelTree {
             }
         }
     }
+    /**
+     * 根据 UV 数对标签进行快速排序
+     */
+    sortUv(tree) {
+        return this.quickSort(tree)
+    }
+    /**
+     * 快速排序
+     */
+    quickSort(arr) {
+        var that = this;
+        if (arr.length <= 1) { return arr; }
+        const pivotIndex = Math.floor(arr.length / 2);
+        const pivot = arr.splice(pivotIndex, 1)[0];
+        const left = [];
+        const right = [];
+        arr.forEach((value, index) => {
+            if (value.children.length > 0) {
+                value.children = this.quickSort(value.children);
+            }
+            if (value.count > pivot.count) {
+                left.push(value);
+            } else {
+                right.push(value);
+            }
+
+        })
+        return that.quickSort(left).concat([pivot], that.quickSort(right));
+    }
 }
 
-const labelTree = new LabelTree(mockData);
-console.log(labelTree.tree);
+function writeFileSync(data, fileName) {
+    data = JSON.stringify(data);
+    fs.writeFileSync(fileName, data);
+}
+// const labelTree = new LabelTree(mockData);
+// console.log(labelTree.tree);
+// writeFileSync(labelTree.tree, './test.json')
 
+export default LabelTree;
 
