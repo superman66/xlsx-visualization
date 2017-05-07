@@ -30,6 +30,7 @@ class LabelTree {
         this.handleData(this.data);
         this.tree = this.arrayToTree(this.labelTree);
         this.tree = this.sortUv(this.tree);
+        this.top10(this.tree);
     }
     /**
      * 获取 ‘MAC’  ‘标签/Weight’ 属性名
@@ -169,15 +170,33 @@ class LabelTree {
         })
         return that.quickSort(left).concat([pivot], that.quickSort(right));
     }
+
+    /**
+     * 获取 Top 10 标签
+     */
+    top10(arr) {
+        arr.map((value, index) => {
+            let children = value.children;
+            if (children.length > 0) {
+                this.top10(children);
+            }
+            if(children.length <= 10){
+                return value;
+            }
+            else{
+                return value.children = children.splice(0, 10)
+            }
+        })
+    }
 }
 
 function writeFileSync(data, fileName) {
     data = JSON.stringify(data);
     fs.writeFileSync(fileName, data);
 }
-// const labelTree = new LabelTree(mockData);
-// console.log(labelTree.tree);
-// writeFileSync(labelTree.tree, './test.json')
+const labelTree = new LabelTree(mockData);
+console.log(labelTree.tree);
+writeFileSync(labelTree.tree, './test.json')
 
 export default LabelTree;
 
