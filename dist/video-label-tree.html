@@ -39,8 +39,9 @@
         </div>
     </div>
     <script type="text/javascript">
-        var w = 1280,
-            h = 800,
+        var baseFont = 12;
+        var w = 1920,
+            h = 1000,
             rx = w / 2,
             ry = h / 2,
             m0,
@@ -68,7 +69,7 @@
             .attr("d", d3.svg.arc().innerRadius(ry - 120).outerRadius(ry).startAngle(0).endAngle(2 * Math.PI))
             .on("mousedown", mousedown);
 
-        d3.json("tree.json", function (json) {
+        d3.json("video-tree.json", function (json) {
             var nodes = cluster.nodes(json);
 
             var link = vis.selectAll("path.link")
@@ -91,7 +92,8 @@
                 .attr("dy", ".31em")
                 .attr("text-anchor", function (d) { return d.x < 180 ? "start" : "end"; })
                 .attr("transform", function (d) { return d.x < 180 ? null : "rotate(180)"; })
-                .text(function (d) { return d.name; });
+                .text(function (d) { return d.name + (d.count ? '(' + d.count + ')' : '') })
+                .style('font-size', function (d) { return calculateFontSize(d.count, baseFont) + 'px' });
         });
 
         d3.select(window)
@@ -150,6 +152,17 @@
 
         function dot(a, b) {
             return a[0] * b[0] + a[1] * b[1];
+        }
+
+        function calculateFontSize(count, baseFont) {
+            var fontSize;
+            if (count <= 30) {
+                fontSize = baseFont;
+            }
+            else {
+                fontSize = parseInt(count / 30) + baseFont;
+            }
+            return fontSize
         }
     </script>
 </body>

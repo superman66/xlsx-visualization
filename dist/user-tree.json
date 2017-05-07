@@ -1,0 +1,1281 @@
+{
+    "name": "用户属性标签",
+    "children": [
+        {
+            "parent": null,
+            "name": "影视音乐",
+            "children": [
+                {
+                    "parent": "影视音乐",
+                    "name": "关注频道",
+                    "children": [],
+                    "count": 325
+                },
+                {
+                    "parent": "影视音乐",
+                    "name": "关注节目",
+                    "children": [],
+                    "count": 122
+                },
+                {
+                    "parent": "影视音乐",
+                    "name": "电影",
+                    "children": [],
+                    "count": 113
+                },
+                {
+                    "parent": "影视音乐",
+                    "name": "电视剧",
+                    "children": [],
+                    "count": 104
+                },
+                {
+                    "parent": "影视音乐",
+                    "name": "关注明星",
+                    "children": [],
+                    "count": 104
+                }
+            ],
+            "count": 325
+        },
+        {
+            "parent": null,
+            "name": "终端",
+            "children": [
+                {
+                    "parent": "终端",
+                    "name": "厂商",
+                    "children": [],
+                    "count": 325
+                },
+                {
+                    "parent": "终端",
+                    "name": "型号",
+                    "children": [],
+                    "count": 325
+                }
+            ],
+            "count": 325
+        },
+        {
+            "parent": null,
+            "name": "厂商",
+            "children": [
+                {
+                    "parent": "厂商",
+                    "name": "华为",
+                    "children": [],
+                    "count": 61
+                }
+            ],
+            "count": 325
+        },
+        {
+            "parent": null,
+            "name": "省份",
+            "children": [
+                {
+                    "parent": "省份",
+                    "name": "上海市",
+                    "children": [],
+                    "count": 173
+                },
+                {
+                    "parent": "省份",
+                    "name": "江苏省",
+                    "children": [],
+                    "count": 27
+                },
+                {
+                    "parent": "省份",
+                    "name": "安徽省",
+                    "children": [],
+                    "count": 11
+                },
+                {
+                    "parent": "省份",
+                    "name": "河南省",
+                    "children": [],
+                    "count": 9
+                },
+                {
+                    "parent": "省份",
+                    "name": "湖北省",
+                    "children": [],
+                    "count": 8
+                }
+            ],
+            "count": 263
+        },
+        {
+            "parent": null,
+            "name": "城市",
+            "children": [
+                {
+                    "parent": "城市",
+                    "name": "上海市",
+                    "children": [],
+                    "count": 173
+                },
+                {
+                    "parent": "城市",
+                    "name": "苏州市",
+                    "children": [],
+                    "count": 13
+                },
+                {
+                    "parent": "城市",
+                    "name": "宣城市",
+                    "children": [],
+                    "count": 4
+                },
+                {
+                    "parent": "城市",
+                    "name": "武汉市",
+                    "children": [],
+                    "count": 4
+                },
+                {
+                    "parent": "城市",
+                    "name": "徐州市",
+                    "children": [],
+                    "count": 3
+                }
+            ],
+            "count": 263
+        },
+        {
+            "parent": null,
+            "name": "资产状况",
+            "children": [
+                {
+                    "parent": "资产状况",
+                    "name": "有车",
+                    "children": [],
+                    "count": 116
+                },
+                {
+                    "parent": "资产状况",
+                    "name": "无车",
+                    "children": [],
+                    "count": 91
+                }
+            ],
+            "count": 207
+        },
+        {
+            "parent": null,
+            "name": "软件应用",
+            "children": [
+                {
+                    "parent": "软件应用",
+                    "name": "旅游出行",
+                    "children": [],
+                    "count": 183
+                },
+                {
+                    "parent": "软件应用",
+                    "name": "理财购物",
+                    "children": [],
+                    "count": 157
+                },
+                {
+                    "parent": "软件应用",
+                    "name": "生活实用",
+                    "children": [],
+                    "count": 144
+                },
+                {
+                    "parent": "软件应用",
+                    "name": "系统工具",
+                    "children": [],
+                    "count": 128
+                },
+                {
+                    "parent": "软件应用",
+                    "name": "社交通讯",
+                    "children": [],
+                    "count": 104
+                }
+            ],
+            "count": 206
+        },
+        {
+            "parent": null,
+            "name": "性别",
+            "children": [
+                {
+                    "parent": "性别",
+                    "name": "男",
+                    "children": [],
+                    "count": 164
+                },
+                {
+                    "parent": "性别",
+                    "name": "女",
+                    "children": [],
+                    "count": 39
+                }
+            ],
+            "count": 203
+        },
+        {
+            "parent": null,
+            "name": "年龄",
+            "children": [
+                {
+                    "parent": "年龄",
+                    "name": "25-34",
+                    "children": [],
+                    "count": 87
+                },
+                {
+                    "parent": "年龄",
+                    "name": "35-44",
+                    "children": [],
+                    "count": 74
+                },
+                {
+                    "parent": "年龄",
+                    "name": "45-54",
+                    "children": [],
+                    "count": 24
+                },
+                {
+                    "parent": "年龄",
+                    "name": "18-24",
+                    "children": [],
+                    "count": 17
+                },
+                {
+                    "parent": "年龄",
+                    "name": "18以下",
+                    "children": [],
+                    "count": 1
+                }
+            ],
+            "count": 203
+        },
+        {
+            "parent": null,
+            "name": "消费水平",
+            "children": [
+                {
+                    "parent": "消费水平",
+                    "name": "高",
+                    "children": [],
+                    "count": 153
+                },
+                {
+                    "parent": "消费水平",
+                    "name": "低",
+                    "children": [],
+                    "count": 87
+                },
+                {
+                    "parent": "消费水平",
+                    "name": "中",
+                    "children": [],
+                    "count": 70
+                }
+            ],
+            "count": 203
+        },
+        {
+            "parent": null,
+            "name": "品类消费水平",
+            "children": [
+                {
+                    "parent": "品类消费水平",
+                    "name": "餐饮消费水平",
+                    "children": [],
+                    "count": 203
+                }
+            ],
+            "count": 203
+        },
+        {
+            "parent": null,
+            "name": "教育水平",
+            "children": [
+                {
+                    "parent": "教育水平",
+                    "name": "高中及以下",
+                    "children": [],
+                    "count": 88
+                },
+                {
+                    "parent": "教育水平",
+                    "name": "大专",
+                    "children": [],
+                    "count": 68
+                },
+                {
+                    "parent": "教育水平",
+                    "name": "本科及以上",
+                    "children": [],
+                    "count": 46
+                }
+            ],
+            "count": 202
+        },
+        {
+            "parent": null,
+            "name": "所在行业",
+            "children": [
+                {
+                    "parent": "所在行业",
+                    "name": "汽车",
+                    "children": [],
+                    "count": 171
+                },
+                {
+                    "parent": "所在行业",
+                    "name": "生活服务",
+                    "children": [],
+                    "count": 111
+                },
+                {
+                    "parent": "所在行业",
+                    "name": "建材家居",
+                    "children": [],
+                    "count": 103
+                },
+                {
+                    "parent": "所在行业",
+                    "name": "IT通信电子",
+                    "children": [],
+                    "count": 24
+                },
+                {
+                    "parent": "所在行业",
+                    "name": "教育",
+                    "children": [],
+                    "count": 20
+                }
+            ],
+            "count": 198
+        },
+        {
+            "parent": null,
+            "name": "汽车",
+            "children": [
+                {
+                    "parent": "汽车",
+                    "name": "中国品牌",
+                    "children": [],
+                    "count": 104
+                },
+                {
+                    "parent": "汽车",
+                    "name": "中档汽车",
+                    "children": [],
+                    "count": 95
+                },
+                {
+                    "parent": "汽车",
+                    "name": "欧洲品牌",
+                    "children": [],
+                    "count": 94
+                },
+                {
+                    "parent": "汽车",
+                    "name": "购车阶段",
+                    "children": [],
+                    "count": 77
+                },
+                {
+                    "parent": "汽车",
+                    "name": "低档汽车",
+                    "children": [],
+                    "count": 65
+                }
+            ],
+            "count": 171
+        },
+        {
+            "parent": null,
+            "name": "职业类别",
+            "children": [
+                {
+                    "parent": "职业类别",
+                    "name": "专业技术人员",
+                    "children": [],
+                    "count": 88
+                },
+                {
+                    "parent": "职业类别",
+                    "name": "文职人员",
+                    "children": [],
+                    "count": 32
+                },
+                {
+                    "parent": "职业类别",
+                    "name": "服务人员",
+                    "children": [],
+                    "count": 29
+                },
+                {
+                    "parent": "职业类别",
+                    "name": "管理者和企业主",
+                    "children": [],
+                    "count": 8
+                },
+                {
+                    "parent": "职业类别",
+                    "name": "生产操作人员",
+                    "children": [],
+                    "count": 5
+                }
+            ],
+            "count": 165
+        },
+        {
+            "parent": null,
+            "name": "旅游酒店",
+            "children": [
+                {
+                    "parent": "旅游酒店",
+                    "name": "国内游",
+                    "children": [],
+                    "count": 112
+                },
+                {
+                    "parent": "旅游酒店",
+                    "name": "景点类型",
+                    "children": [],
+                    "count": 106
+                },
+                {
+                    "parent": "旅游酒店",
+                    "name": "远途出行方式",
+                    "children": [],
+                    "count": 86
+                },
+                {
+                    "parent": "旅游酒店",
+                    "name": "交通票务",
+                    "children": [],
+                    "count": 54
+                },
+                {
+                    "parent": "旅游酒店",
+                    "name": "出国游",
+                    "children": [],
+                    "count": 29
+                }
+            ],
+            "count": 160
+        },
+        {
+            "parent": null,
+            "name": "资讯",
+            "children": [
+                {
+                    "parent": "资讯",
+                    "name": "娱乐八卦",
+                    "children": [],
+                    "count": 44
+                },
+                {
+                    "parent": "资讯",
+                    "name": "商业财经",
+                    "children": [],
+                    "count": 42
+                },
+                {
+                    "parent": "资讯",
+                    "name": "军事",
+                    "children": [],
+                    "count": 39
+                },
+                {
+                    "parent": "资讯",
+                    "name": "科技资讯",
+                    "children": [],
+                    "count": 32
+                },
+                {
+                    "parent": "资讯",
+                    "name": "社会时政",
+                    "children": [],
+                    "count": 24
+                }
+            ],
+            "count": 159
+        },
+        {
+            "parent": null,
+            "name": "医疗健康",
+            "children": [
+                {
+                    "parent": "医疗健康",
+                    "name": "养生保健",
+                    "children": [],
+                    "count": 58
+                },
+                {
+                    "parent": "医疗健康",
+                    "name": "西医",
+                    "children": [],
+                    "count": 51
+                },
+                {
+                    "parent": "医疗健康",
+                    "name": "中医",
+                    "children": [],
+                    "count": 34
+                },
+                {
+                    "parent": "医疗健康",
+                    "name": "药品",
+                    "children": [],
+                    "count": 7
+                }
+            ],
+            "count": 147
+        },
+        {
+            "parent": null,
+            "name": "金融财经",
+            "children": [
+                {
+                    "parent": "金融财经",
+                    "name": "保险",
+                    "children": [],
+                    "count": 42
+                },
+                {
+                    "parent": "金融财经",
+                    "name": "股票",
+                    "children": [],
+                    "count": 35
+                },
+                {
+                    "parent": "金融财经",
+                    "name": "贷款",
+                    "children": [],
+                    "count": 28
+                },
+                {
+                    "parent": "金融财经",
+                    "name": "外汇",
+                    "children": [],
+                    "count": 21
+                },
+                {
+                    "parent": "金融财经",
+                    "name": "网络理财",
+                    "children": [],
+                    "count": 12
+                }
+            ],
+            "count": 146
+        },
+        {
+            "parent": null,
+            "name": "教育培训",
+            "children": [
+                {
+                    "parent": "教育培训",
+                    "name": "全日制学校",
+                    "children": [],
+                    "count": 89
+                },
+                {
+                    "parent": "教育培训",
+                    "name": "考试培训",
+                    "children": [],
+                    "count": 55
+                },
+                {
+                    "parent": "教育培训",
+                    "name": "基础教育科目",
+                    "children": [],
+                    "count": 42
+                },
+                {
+                    "parent": "教育培训",
+                    "name": "语言学习",
+                    "children": [],
+                    "count": 34
+                },
+                {
+                    "parent": "教育培训",
+                    "name": "技能培训",
+                    "children": [],
+                    "count": 25
+                }
+            ],
+            "count": 135
+        },
+        {
+            "parent": null,
+            "name": "网络购物",
+            "children": [
+                {
+                    "parent": "网络购物",
+                    "name": "团购",
+                    "children": [],
+                    "count": 89
+                },
+                {
+                    "parent": "网络购物",
+                    "name": "电商购物平台",
+                    "children": [],
+                    "count": 86
+                },
+                {
+                    "parent": "网络购物",
+                    "name": "支付方式",
+                    "children": [],
+                    "count": 35
+                },
+                {
+                    "parent": "网络购物",
+                    "name": "比价",
+                    "children": [],
+                    "count": 29
+                },
+                {
+                    "parent": "网络购物",
+                    "name": "海淘",
+                    "children": [],
+                    "count": 26
+                }
+            ],
+            "count": 132
+        },
+        {
+            "parent": null,
+            "name": "房产",
+            "children": [
+                {
+                    "parent": "房产",
+                    "name": "房屋租赁",
+                    "children": [],
+                    "count": 65
+                },
+                {
+                    "parent": "房产",
+                    "name": "买房",
+                    "children": [],
+                    "count": 52
+                },
+                {
+                    "parent": "房产",
+                    "name": "二手房",
+                    "children": [],
+                    "count": 47
+                },
+                {
+                    "parent": "房产",
+                    "name": "新房",
+                    "children": [],
+                    "count": 43
+                },
+                {
+                    "parent": "房产",
+                    "name": "居住环境",
+                    "children": [],
+                    "count": 18
+                }
+            ],
+            "count": 131
+        },
+        {
+            "parent": null,
+            "name": "家电数码",
+            "children": [
+                {
+                    "parent": "家电数码",
+                    "name": "手机",
+                    "children": [],
+                    "count": 109
+                },
+                {
+                    "parent": "家电数码",
+                    "name": "电脑",
+                    "children": [],
+                    "count": 67
+                },
+                {
+                    "parent": "家电数码",
+                    "name": "电视",
+                    "children": [],
+                    "count": 27
+                },
+                {
+                    "parent": "家电数码",
+                    "name": "影音设备",
+                    "children": [],
+                    "count": 23
+                },
+                {
+                    "parent": "家电数码",
+                    "name": "网络设备",
+                    "children": [],
+                    "count": 21
+                }
+            ],
+            "count": 129
+        },
+        {
+            "parent": null,
+            "name": "餐饮美食",
+            "children": [
+                {
+                    "parent": "餐饮美食",
+                    "name": "口味",
+                    "children": [],
+                    "count": 74
+                },
+                {
+                    "parent": "餐饮美食",
+                    "name": "休闲小食",
+                    "children": [],
+                    "count": 27
+                },
+                {
+                    "parent": "餐饮美食",
+                    "name": "海鲜",
+                    "children": [],
+                    "count": 24
+                },
+                {
+                    "parent": "餐饮美食",
+                    "name": "烹饪和菜谱",
+                    "children": [],
+                    "count": 22
+                },
+                {
+                    "parent": "餐饮美食",
+                    "name": "小吃快餐",
+                    "children": [],
+                    "count": 21
+                }
+            ],
+            "count": 120
+        },
+        {
+            "parent": null,
+            "name": "体育健身",
+            "children": [
+                {
+                    "parent": "体育健身",
+                    "name": "体育赛事",
+                    "children": [],
+                    "count": 76
+                },
+                {
+                    "parent": "体育健身",
+                    "name": "足球",
+                    "children": [],
+                    "count": 62
+                },
+                {
+                    "parent": "体育健身",
+                    "name": "篮球",
+                    "children": [],
+                    "count": 37
+                },
+                {
+                    "parent": "体育健身",
+                    "name": "羽毛球",
+                    "children": [],
+                    "count": 14
+                },
+                {
+                    "parent": "体育健身",
+                    "name": "乒乓球",
+                    "children": [],
+                    "count": 12
+                }
+            ],
+            "count": 112
+        },
+        {
+            "parent": null,
+            "name": "生活服务",
+            "children": [
+                {
+                    "parent": "生活服务",
+                    "name": "物流配送",
+                    "children": [],
+                    "count": 72
+                },
+                {
+                    "parent": "生活服务",
+                    "name": "搬家服务",
+                    "children": [],
+                    "count": 5
+                },
+                {
+                    "parent": "生活服务",
+                    "name": "家政服务",
+                    "children": [],
+                    "count": 15
+                },
+                {
+                    "parent": "生活服务",
+                    "name": "二手回收",
+                    "children": [],
+                    "count": 7
+                },
+                {
+                    "parent": "生活服务",
+                    "name": "物业维修",
+                    "children": [],
+                    "count": 6
+                }
+            ],
+            "count": 111
+        },
+        {
+            "parent": null,
+            "name": "休闲爱好",
+            "children": [
+                {
+                    "parent": "休闲爱好",
+                    "name": "收藏",
+                    "children": [],
+                    "count": 45
+                },
+                {
+                    "parent": "休闲爱好",
+                    "name": "摄影",
+                    "children": [],
+                    "count": 45
+                },
+                {
+                    "parent": "休闲爱好",
+                    "name": "美术",
+                    "children": [],
+                    "count": 23
+                },
+                {
+                    "parent": "休闲爱好",
+                    "name": "温泉",
+                    "children": [],
+                    "count": 20
+                },
+                {
+                    "parent": "休闲爱好",
+                    "name": "书法",
+                    "children": [],
+                    "count": 15
+                }
+            ],
+            "count": 110
+        },
+        {
+            "parent": null,
+            "name": "母婴亲子",
+            "children": [
+                {
+                    "parent": "母婴亲子",
+                    "name": "孕婴保健",
+                    "children": [],
+                    "count": 78
+                },
+                {
+                    "parent": "母婴亲子",
+                    "name": "母婴社区",
+                    "children": [],
+                    "count": 62
+                },
+                {
+                    "parent": "母婴亲子",
+                    "name": "早教",
+                    "children": [],
+                    "count": 12
+                },
+                {
+                    "parent": "母婴亲子",
+                    "name": "奶粉辅食",
+                    "children": [],
+                    "count": 7
+                },
+                {
+                    "parent": "母婴亲子",
+                    "name": "童车童床",
+                    "children": [],
+                    "count": 7
+                }
+            ],
+            "count": 108
+        },
+        {
+            "parent": null,
+            "name": "游戏",
+            "children": [
+                {
+                    "parent": "游戏",
+                    "name": "手机游戏",
+                    "children": [],
+                    "count": 79
+                },
+                {
+                    "parent": "游戏",
+                    "name": "PC游戏",
+                    "children": [],
+                    "count": 50
+                },
+                {
+                    "parent": "游戏",
+                    "name": "网页游戏",
+                    "children": [],
+                    "count": 43
+                },
+                {
+                    "parent": "游戏",
+                    "name": "游戏机",
+                    "children": [],
+                    "count": 33
+                },
+                {
+                    "parent": "游戏",
+                    "name": "模拟辅助",
+                    "children": [],
+                    "count": 29
+                }
+            ],
+            "count": 108
+        },
+        {
+            "parent": null,
+            "name": "求职创业",
+            "children": [
+                {
+                    "parent": "求职创业",
+                    "name": "创业",
+                    "children": [],
+                    "count": 44
+                },
+                {
+                    "parent": "求职创业",
+                    "name": "求职",
+                    "children": [],
+                    "count": 43
+                }
+            ],
+            "count": 107
+        },
+        {
+            "parent": null,
+            "name": "商务服务",
+            "children": [
+                {
+                    "parent": "商务服务",
+                    "name": "法律咨询",
+                    "children": [],
+                    "count": 47
+                },
+                {
+                    "parent": "商务服务",
+                    "name": "会计审计",
+                    "children": [],
+                    "count": 18
+                },
+                {
+                    "parent": "商务服务",
+                    "name": "广告服务",
+                    "children": [],
+                    "count": 14
+                }
+            ],
+            "count": 107
+        },
+        {
+            "parent": null,
+            "name": "建材家居",
+            "children": [
+                {
+                    "parent": "建材家居",
+                    "name": "装修建材",
+                    "children": [],
+                    "count": 73
+                },
+                {
+                    "parent": "建材家居",
+                    "name": "家具",
+                    "children": [],
+                    "count": 32
+                },
+                {
+                    "parent": "建材家居",
+                    "name": "家纺",
+                    "children": [],
+                    "count": 12
+                },
+                {
+                    "parent": "建材家居",
+                    "name": "豪华风格",
+                    "children": [],
+                    "count": 10
+                },
+                {
+                    "parent": "建材家居",
+                    "name": "宜家风格",
+                    "children": [],
+                    "count": 7
+                }
+            ],
+            "count": 103
+        },
+        {
+            "parent": null,
+            "name": "花鸟萌宠",
+            "children": [
+                {
+                    "parent": "花鸟萌宠",
+                    "name": "狗",
+                    "children": [],
+                    "count": 38
+                },
+                {
+                    "parent": "花鸟萌宠",
+                    "name": "绿植花卉",
+                    "children": [],
+                    "count": 35
+                },
+                {
+                    "parent": "花鸟萌宠",
+                    "name": "鱼",
+                    "children": [],
+                    "count": 13
+                },
+                {
+                    "parent": "花鸟萌宠",
+                    "name": "猫",
+                    "children": [],
+                    "count": 10
+                },
+                {
+                    "parent": "花鸟萌宠",
+                    "name": "宠物用品",
+                    "children": [],
+                    "count": 5
+                }
+            ],
+            "count": 99
+        },
+        {
+            "parent": null,
+            "name": "服饰鞋包",
+            "children": [
+                {
+                    "parent": "服饰鞋包",
+                    "name": "女装",
+                    "children": [],
+                    "count": 15
+                },
+                {
+                    "parent": "服饰鞋包",
+                    "name": "男装",
+                    "children": [],
+                    "count": 10
+                },
+                {
+                    "parent": "服饰鞋包",
+                    "name": "钱包",
+                    "children": [],
+                    "count": 6
+                },
+                {
+                    "parent": "服饰鞋包",
+                    "name": "手表",
+                    "children": [],
+                    "count": 6
+                },
+                {
+                    "parent": "服饰鞋包",
+                    "name": "女包",
+                    "children": [],
+                    "count": 4
+                }
+            ],
+            "count": 99
+        },
+        {
+            "parent": null,
+            "name": "个护美容",
+            "children": [
+                {
+                    "parent": "个护美容",
+                    "name": "护肤品",
+                    "children": [],
+                    "count": 22
+                },
+                {
+                    "parent": "个护美容",
+                    "name": "彩妆",
+                    "children": [],
+                    "count": 14
+                },
+                {
+                    "parent": "个护美容",
+                    "name": "美发",
+                    "children": [],
+                    "count": 12
+                },
+                {
+                    "parent": "个护美容",
+                    "name": "美甲",
+                    "children": [],
+                    "count": 9
+                },
+                {
+                    "parent": "个护美容",
+                    "name": "香水",
+                    "children": [],
+                    "count": 3
+                }
+            ],
+            "count": 96
+        },
+        {
+            "parent": null,
+            "name": "书籍阅读",
+            "children": [
+                {
+                    "parent": "书籍阅读",
+                    "name": "言情网络小说",
+                    "children": [],
+                    "count": 25
+                },
+                {
+                    "parent": "书籍阅读",
+                    "name": "文学",
+                    "children": [],
+                    "count": 22
+                },
+                {
+                    "parent": "书籍阅读",
+                    "name": "玄幻网络小说",
+                    "children": [],
+                    "count": 19
+                },
+                {
+                    "parent": "书籍阅读",
+                    "name": "时代网络小说",
+                    "children": [],
+                    "count": 15
+                },
+                {
+                    "parent": "书籍阅读",
+                    "name": "报刊杂志",
+                    "children": [],
+                    "count": 10
+                }
+            ],
+            "count": 96
+        },
+        {
+            "parent": null,
+            "name": "人生阶段",
+            "children": [
+                {
+                    "parent": "人生阶段",
+                    "name": "家有0-1岁小孩",
+                    "children": [],
+                    "count": 10
+                },
+                {
+                    "parent": "人生阶段",
+                    "name": "家有中学生",
+                    "children": [],
+                    "count": 3
+                },
+                {
+                    "parent": "人生阶段",
+                    "name": "孕期",
+                    "children": [],
+                    "count": 2
+                },
+                {
+                    "parent": "人生阶段",
+                    "name": "家有小学生",
+                    "children": [],
+                    "count": 2
+                },
+                {
+                    "parent": "人生阶段",
+                    "name": "家有1-3岁小孩",
+                    "children": [],
+                    "count": 1
+                }
+            ],
+            "count": 18
+        },
+        {
+            "parent": null,
+            "name": "陈奕迅",
+            "children": [],
+            "count": 3
+        },
+        {
+            "parent": null,
+            "name": "星座",
+            "children": [
+                {
+                    "parent": "星座",
+                    "name": "天秤座",
+                    "children": [],
+                    "count": 1
+                },
+                {
+                    "parent": "星座",
+                    "name": "双子座",
+                    "children": [],
+                    "count": 1
+                }
+            ],
+            "count": 2
+        },
+        {
+            "parent": null,
+            "name": "陈咏",
+            "children": [],
+            "count": 1
+        },
+        {
+            "parent": null,
+            "name": "甜馨",
+            "children": [],
+            "count": 1
+        },
+        {
+            "parent": null,
+            "name": "苏月",
+            "children": [],
+            "count": 1
+        },
+        {
+            "parent": null,
+            "name": "非汽车类机动车",
+            "children": [
+                {
+                    "parent": "非汽车类机动车",
+                    "name": "电动车",
+                    "children": [],
+                    "count": 1
+                }
+            ],
+            "count": 1
+        },
+        {
+            "parent": null,
+            "name": "标签",
+            "children": [
+                {
+                    "parent": "标签",
+                    "name": "Weight",
+                    "children": [],
+                    "count": 1
+                }
+            ],
+            "count": 1
+        }
+    ]
+}

@@ -3,7 +3,7 @@ var fs = require('fs');
 import LabelTree from './LabelTree'
 
 //读取文件内容
-var obj = xlsx.parse(__dirname + '/data/demo.xlsx');
+var obj = xlsx.parse(__dirname + '/data/user-label.xlsx');
 var excelObj = obj[0].data;
 // console.log(excelObj);
 
@@ -28,7 +28,7 @@ function generateTree(data) {
         name: "用户属性标签",
         children: labelTree.tree
     }
-    writeFileSync(data, './data/tree.json')
+    writeFileSync(data, './dist/user-tree.json')
 }
 
 function generateUV(data) {
@@ -37,9 +37,6 @@ function generateUV(data) {
     writeFileSync(uvs, './data/uv.json')
 }
 
-function addUvToLabel(tree) {
-
-}
 
 
 

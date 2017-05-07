@@ -17,6 +17,7 @@ const mockData = [
 ]
 class LabelTree {
     constructor(data) {
+        this.TOP_NUMBER = 5;
         this.data = data; // 传入的原始数据
         this.tree = []; // 生成传统树结构的数组
         this.labelTree = [];  // 生成的扁平树数组
@@ -30,7 +31,7 @@ class LabelTree {
         this.handleData(this.data);
         this.tree = this.arrayToTree(this.labelTree);
         this.tree = this.sortUv(this.tree);
-        this.top10(this.tree);
+        this.top(this.tree, this.TOP_NUMBER);
     }
     /**
      * 获取 ‘MAC’  ‘标签/Weight’ 属性名
@@ -172,19 +173,20 @@ class LabelTree {
     }
 
     /**
-     * 获取 Top 10 标签
+     * arr 数组
+     * num  top num
      */
-    top10(arr) {
+    top(arr, num) {
         arr.map((value, index) => {
             let children = value.children;
             if (children.length > 0) {
-                this.top10(children);
+                this.top(children);
             }
-            if(children.length <= 10){
+            if(children.length <= num){
                 return value;
             }
             else{
-                return value.children = children.splice(0, 10)
+                return value.children = children.splice(0, num)
             }
         })
     }
@@ -194,9 +196,9 @@ function writeFileSync(data, fileName) {
     data = JSON.stringify(data);
     fs.writeFileSync(fileName, data);
 }
-const labelTree = new LabelTree(mockData);
-console.log(labelTree.tree);
-writeFileSync(labelTree.tree, './test.json')
+// const labelTree = new LabelTree(mockData);
+// console.log(labelTree.tree);
+// writeFileSync(labelTree.tree, './test.json')
 
 export default LabelTree;
 

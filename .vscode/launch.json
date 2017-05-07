@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceRoot}/LabelTree.js"
+            "program": "${workspaceRoot}/VideoLabelTree.js"
         },
         {
             "type": "node",
